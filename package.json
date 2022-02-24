@@ -1,0 +1,23 @@
+{
+  "name": "real-time-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hshine1226/real-time-practice.git",
+  "author": "hshine1226 <hshine1226@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "pug": "^3.0.2"
+  },
+  "scripts": {
+    "build": "babel src -d dist",
+    "dev": "nodemon"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  }
+}
