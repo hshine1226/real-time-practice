@@ -20,6 +20,10 @@ app.get("/*", (req, res) => {
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
-const handleListen = () => console.log(`Listening on http://localhost:3000`);
+wss.on("connection", (socket) => {
+  console.log("socket: ", socket);
+});
 
-server.listen(3000, handleListen);
+const handleListen = () => console.log(`Listening on http://localhost:${port}`);
+
+server.listen(port, handleListen);
