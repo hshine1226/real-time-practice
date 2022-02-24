@@ -29,6 +29,7 @@ wss.on("connection", (socket) => {
 
   socket.on("message", (message) => {
     console.log("New message: ", message.toString());
+    socket.send(message.toString());
   });
 
   socket.send("hello");
