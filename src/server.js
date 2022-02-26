@@ -26,6 +26,18 @@ io.on("connection", (socket) => {
     done();
     socket.to(roomName).emit("welcome");
   });
+
+  socket.on("message", (message, roomName, done) => {
+    socket.to(roomName).emit("message", message);
+    done();
+  });
+
+  socket.on("disconnecting", () => {
+    const rooms = socket.rooms;
+    rooms.forEach((roomName) => {
+      socket.to(roomName).emit("bye");
+    });
+  });
 });
 
 server.listen(port, () => console.log(`Listening on http://localhost:${port}`));
